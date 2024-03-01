@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3, 
+    "name": "Conspire Commerce Extension",
+    "version": "1.4",
+    "description": "A Chrome extension to that uses chat room to share commercial products",
+    "permissions": [
+      "activeTab", "tabs", "storage", "background"
+    ],    
+    "host_permissions":[
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "util/background.js"
+    },  
+    "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.amazon.com/*", "https://*.ebay.com/*", "https://*.walmart.com/*",
+         "https://*.alibaba.com/*", "https://*.etsy.com/*", "https://*.target.com/*", 
+         "https://*.bestbuy.com/*", "https://*.shopify.com/*", "https://*.asos.com/*", 
+         "https://*.zappos.com/*", "https://*.macys.com/*", "https://*.homedepot.com/*", 
+         "https://*.costco.com/*", "https://*.wayfair.com/*", "https://*.flipkart.com/*", 
+         "https://*.newegg.com/*", "https://*.nordstrom.com/*", "https://*.overstock.com/*", 
+         "https://*.sephora.com/*", "https://*.cvs.com/*", "https://*.kohls.com/*", 
+         "https://*.rei.com/*", "https://*.petsmart.com/*", "https://*.ulta.com/*", 
+         "https://*.staples.com/*", "https://*.chewy.com/*", "https://*.ikea.com/*", 
+         "https://*.lowes.com/*", "https://*.bedbathandbeyond.com/*", "https://*.dickssportinggoods.com/*", 
+         "https://*.gap.com/*", "https://*.hm.com/*", "https://*.urbanoutfitters.com/*", 
+         "https://*.jcrew.com/*", "https://*.thenorthface.com/*", "https://*.patagonia.com/*", 
+         "https://*.adidas.com/*", "https://*.nike.com/*", "https://*.underarmour.com/*", 
+         "https://*.puma.com/*", "https://*.footlocker.com/*", "https://*.victoriassecret.com/*", 
+         "https://*.lululemon.com/*", "https://*.columbia.com/*", "https://*.modcloth.com/*", 
+         "https://*.forever21.com/*", "https://*.express.com/*", "https://*.coach.com/*", 
+         "https://*.ralphlauren.com/*", "https://*.burberry.com/*", "https://*.gucci.com/*", 
+         "https://*.prada.com/*", "https://*.louisvuitton.com/*", "https://*.tiffany.com/*"],
+        "js": ["contentScript.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
